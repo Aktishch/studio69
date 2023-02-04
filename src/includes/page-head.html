@@ -1,0 +1,9 @@
+
+    <section class="page-head <%= data.status ? 'page-head--bg' : 'page-head--white' %> container flex flex-grow flex-direction-column py-0">
+        <div class="page-head__block flex flex-grow flex-direction-column height-100 <%= data.status ? '' : 'border-bottom' %>">
+            <nav class="navigation mb-10 mb-md-5">
+                <a class="link text-12 bold-4" href="">Главная</a> - <span class="text-12 bold-4"><%= data.title %></span>
+            </nav>
+            <h1 class="title text text--center <%= data.status ? 'text-48 text-td-38 width-content mx-auto' : 'text-32 text-td-20 mt-auto' %> bold-8 anim anim--up -scroll-"><%= data.title %></h1>
+        </div>
+    </section>

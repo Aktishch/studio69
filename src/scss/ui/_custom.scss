@@ -1,0 +1,24 @@
+// Fancybox
+.fancybox__content {
+    padding   : 0;
+    background: none;
+    max-width : 100%;
+
+    & :focus:not(.carousel__button.is-close) {
+        outline: none;
+    }
+
+    &>.carousel__button.is-close {
+        top             : var(--size-2);
+        right           : var(--size-2);
+        color           : var(--color-black);
+        background-color: var(--color-white);
+        box-shadow      : 0 var(--size-1) var(--size-2) var(--color-black-10);
+    }
+
+    @media(max-width: $tablet) {
+        &>.carousel__button.is-close {
+            position: fixed;
+        }
+    }
+}

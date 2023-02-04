@@ -1,0 +1,844 @@
+// Логотип
+.logo {
+    width: 96px;
+}
+
+// Список
+.listing {
+    &__item {
+        display    : flex;
+        align-items: center;
+
+        &::before {
+            content      : '';
+            display      : block;
+            border-radius: 50%;
+            min-width    : var(--size-3);
+            height       : var(--size-3);
+            margin-right : 12px;
+        }
+
+        &--primary {
+            &::before {
+                background-image:
+                    radial-gradient(83.29% 75% at 50% 25%, rgba(187, 164, 242, 0) 86.31%, #AC90F1 100%),
+                    radial-gradient(68.75% 71.43% at 66.04% 50%, rgba(131, 107, 189, 0) 62.01%, #836BBD 95.13%),
+                    radial-gradient(38.97% 40.89% at 81% 31.25%, #D2BFFF 17.87%, rgba(131, 107, 189, 0) 100%),
+                    linear-gradient(180deg, #836BBD 0%, rgba(218, 203, 255, 0) 23.21%), radial-gradient(75.89% 75.89% at 79.21% 24.11%, #B297F2 23.23%, #836BBD 100%);
+            }
+        }
+
+        &--white {
+            &::before {
+                background-image:
+                    radial-gradient(88.99% 80.13% at 50% 25%, rgba(176, 141, 207, 0) 72.5%, #A283BF 100%),
+                    radial-gradient(68.75% 71.43% at 66.04% 50%, rgba(189, 181, 197, 0) 62.01%, #D7D5D9 95.13%),
+                    radial-gradient(41.82% 38.61% at 77.1% 36.22%, #FFFFFF 0%, rgba(250, 234, 255, 0) 100%),
+                    linear-gradient(180deg, #C4C4C5 0%, rgba(196, 196, 197, 0) 20.13%),
+                    radial-gradient(75.89% 75.89% at 79.21% 24.11%, #DFDDE1 11.58%, #C2A4DF 85.31%);
+            }
+        }
+    }
+}
+
+// Тени
+.box-shadow {
+    box-shadow: 0 var(--size-5) var(--size-5) var(--color-black-10);
+}
+
+// Большая иконка
+.submit-pic {
+    font-size: calc(var(--font-50) * 2);
+}
+
+// Фон
+.bg-block {
+    top   : 0;
+    left  : 0;
+    right : 0;
+    bottom: 0;
+}
+
+// Заголовок
+.title {
+    background             : linear-gradient(270deg, var(--color-primary) 11.82%, var(--color-none) 57.26%), var(--color-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip        : text;
+    text-fill-color        : transparent;
+}
+
+// Мессенджер
+.messenger-btn {
+    max-width: 260px;
+
+    &--tg {
+        background: linear-gradient(180deg, #2AABEE 0%, #229ED9 99.21%);
+    }
+
+    &--wa {
+        background: linear-gradient(180deg, #60FCCD 0%, #25CFBB 99.21%);
+    }
+
+    &__img {
+        min-width: var(--size-6);
+        height   : var(--size-6);
+    }
+}
+
+// Шапка документа
+.header {
+    top      : 0;
+    left     : 0;
+    right    : 0;
+    transform: translateY(var(--top));
+}
+
+// Навигация
+.nav {
+    max-width: 400px;
+}
+
+// Соц сети
+.social {
+    &__btn {
+        width : var(--size-9);
+        height: var(--size-9);
+    }
+}
+
+// Мобильное меню
+.mobile {
+    top             : 0;
+    left            : 0;
+    bottom          : 0;
+    right           : 0;
+    max-width       : 375px;
+    background-color: var(--color-black-90);
+    backdrop-filter : blur(var(--size-2));
+    box-shadow      : 0 0 0 100vw var(--color-black-50);
+
+    &:not(&--show) {
+        transform : translateX(-100%);
+        opacity   : 0;
+        visibility: hidden;
+    }
+
+    &:not(&--show) &__head {
+        transform: translateY(-80px);
+    }
+
+    &:not(&--show) &__nav {
+        transform: translateX(-220px);
+        opacity  : 0;
+    }
+
+    &:not(&--show) &__footer {
+        transform: translateY(30px);
+        opacity  : 0;
+    }
+
+    &__accordion:is([data-accordion="active"]) &__arrow {
+        transform: rotate(90deg);
+    }
+
+    &--show {
+        transform : translateX(0);
+        opacity   : 1;
+        visibility: visible;
+    }
+
+    &--show &__head {
+        transform: translateY(0);
+    }
+
+    &--show &__nav {
+        transform: translateX(0);
+        opacity  : 1;
+    }
+
+    &--show &__footer {
+        transform: translateY(0);
+        opacity  : 1;
+    }
+}
+
+// Студия
+.studio {
+    background:
+        linear-gradient(251.47deg, var(--color-primary-50) 0%, var(--color-none) 62.55%),
+        linear-gradient(251.47deg, var(--color-none) 37.45%, var(--color-second-50) 100%);
+    min-height: 830px;
+
+    &__bg {
+        &::after {
+            content   : '';
+            position  : absolute;
+            top       : 0;
+            left      : 0;
+            right     : 0;
+            bottom    : 0;
+            width     : 100%;
+            height    : 100%;
+            background: linear-gradient(180deg, var(--color-none) 65.33%, var(--color-white) 88.85%);
+        }
+    }
+
+    &__woman {
+        left  : 0;
+        right : 0;
+        bottom: 0;
+    }
+
+    &__work {
+        background-color: var(--color-white-60);
+        backdrop-filter : blur(var(--size-1));
+    }
+
+    &__title {
+        max-width: 950px;
+    }
+
+    &__play {
+        min-width      : 42px;
+        height         : 42px;
+        background     : linear-gradient(0deg, var(--color-white) 30.13%, var(--color-black-10) 100.13%);
+        backdrop-filter: blur(var(--size-1));
+    }
+
+    @media(max-width: $laptop) {
+        & {
+            min-height: 600px;
+        }
+    }
+
+    @media(max-width: $tablet) {
+        & {
+            min-height: 600px;
+        }
+
+        &__block {
+            padding-top    : 100px;
+            justify-content: flex-start;
+        }
+
+        &__title {
+            text-align    : center;
+            flex-direction: column;
+        }
+
+        &__woman {
+            width: 850px;
+        }
+    }
+
+    @media(max-width: $mobile) {
+        & {
+            min-height: 650px;
+        }
+
+        &__bg {
+            &::after {
+                background: linear-gradient(180deg, var(--color-none) 37.33%, var(--color-white) 88.85%);
+            }
+        }
+
+        &__woman {
+            width    : 1000px;
+            transform: translateX(-330px);
+        }
+
+        &__work {
+            border-radius: var(--size-3);
+        }
+
+        &__work,
+        &__item {
+            transition: {
+                duration: 0.3s;
+                delay   : 0s;
+            }
+        }
+    }
+}
+
+// Анкета
+.questionnaire {
+    background-image: linear-gradient(180deg, var(--color-none) 0%, var(--color-black-20) 100%);
+
+    &__label {
+        &--max {
+            width: 300px;
+        }
+
+        &--min {
+            width: 120px;
+        }
+    }
+
+    &__btn {
+        width: 210px;
+    }
+
+    @media(max-width: $laptop) {
+        &__label {
+            width: 40%;
+        }
+    }
+
+    @media(max-width: $tablet) {
+        &__label {
+            width: 100%;
+        }
+    }
+}
+
+// Преимущества
+.advantages {
+    background:
+        linear-gradient(116.85deg, var(--color-second-20) 0%, var(--color-none) 40.13%),
+        linear-gradient(180deg, var(--color-white-40) 0%, var(--color-none) 100%),
+        var(--color-grey-80);
+
+    &__item {
+        background: linear-gradient(180deg, var(--color-white-10) 0%, var(--color-white-20) 0.01%, var(--color-white) 100%);
+    }
+
+    &__img {
+        font-size: 56px;
+    }
+
+    @media(max-width: $tablet) {
+        &__item {
+            transition-delay: 0s;
+        }
+    }
+
+    @media(max-width: $mobile) {
+        &__img {
+            font-size: 36px;
+        }
+    }
+}
+
+// Рассчет
+.calculation {
+    &__info {
+        top             : 190px;
+        left            : calc(100vw - 720px);
+        max-width       : 340px;
+        background-image: linear-gradient(147.74deg, var(--color-white-50) 0.01%, var(--color-white) 100%);
+    }
+
+    &__block {
+        max-width       : 465px;
+        background-image: linear-gradient(147.74deg, var(--color-white-90) 0.01%, var(--color-white) 100%);
+    }
+
+    @media(max-width: $laptop) {
+        &__info {
+            top : 140px;
+            left: calc(100vw - 370px);
+        }
+
+        &__title {
+            margin-bottom: 150px;
+        }
+    }
+
+    @media(max-width: $tablet) {
+        &__info {
+            top   : 160px;
+            left  : 0;
+            right : 0;
+            margin: 0 auto;
+        }
+
+        &__block {
+            margin: 0 auto;
+        }
+    }
+
+    @media(max-width: $mobile) {
+        &__info {
+            top          : 120px;
+            border-radius: var(--size-2);
+        }
+
+        &__block {
+            background-image: linear-gradient(147.74deg, var(--color-white-30) 0.01%, var(--color-white-50) 100%);
+        }
+
+        &__text {
+            color      : var(--color-white);
+            text-shadow: 2px 2px var(--size-1) var(--color-black-70);
+        }
+
+        &__title {
+            margin-bottom: 100px;
+        }
+    }
+}
+
+// Бегунок
+.range {
+    &__wrapper {
+        height: var(--size-2);
+    }
+
+    &__circle {
+        &::-webkit-slider-thumb {
+            @include getRange;
+        }
+
+        &::-moz-range-thumb {
+            @include getRange;
+        }
+
+        &::-ms-thumb {
+            @include getRange;
+        }
+    }
+
+    &__bubble {
+        top      : -70%;
+        transform: translateX(-50%);
+    }
+}
+
+// Работа
+.working {
+    background-image:
+        linear-gradient(71.47deg, var(--color-primary-30) 0%, var(--color-none) 62.55%),
+        linear-gradient(251.47deg, var(--color-none) 37.45%, var(--color-second-10) 100%);
+
+    &__pic {
+        &::after {
+            content         : '';
+            position        : absolute;
+            left            : 0;
+            right           : 0;
+            bottom          : var(--size-10);
+            width           : 100px;
+            height          : var(--size-1);
+            background-color: var(--color-black-10);
+            filter          : blur(var(--size-1));
+            margin          : 0 auto;
+        }
+
+    }
+
+    @media(max-width: $laptop) {
+        &__item {
+            transition-delay: 0s;
+        }
+    }
+
+    @media(max-width: $mobile) {
+        &__pic {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+// Условия
+.terms {
+    background-image: radial-gradient(50% 404.54% at 50% 50%, var(--color-none) 20.82%, var(--color-black-30) 100%);
+
+    &__items {
+        background     : var(--color-white-20);
+        backdrop-filter: blur(var(--size-2));
+    }
+
+    &__item {
+        max-width     : 415px;
+        padding       : 48px;
+        padding-bottom: 70px;
+
+        &--1 {
+            bottom: var(--size-6);
+        }
+
+        &--2 {
+            top: var(--size-6);
+        }
+    }
+
+    &__person {
+        max-width: 950px;
+        left     : 50%;
+        transform: translateX(-40%);
+    }
+
+    &__play {
+        width           : 90px;
+        height          : 90px;
+        background-image: linear-gradient(0deg, var(--color-white) 0.13%, var(--color-white-30) 100.13%);
+        backdrop-filter : blur(var(--size-1));
+        transform       : translate(-150%, 80%);
+    }
+
+    @media(max-width: $laptop) {
+        &__pic {
+            object-fit: none !important;
+        }
+
+        &__items {
+            flex-direction : column;
+            align-items    : flex-start;
+            justify-content: flex-start;
+        }
+
+        &__item {
+            max-width       : 100%;
+            transition-delay: 0s;
+        }
+
+        &__person {
+            left     : 34%;
+            top      : var(--size-1);
+            transform: none;
+            max-width: 640px;
+        }
+    }
+
+    @media(max-width: $tablet) {
+        &__image {
+            left         : var(--size-10);
+            transform    : scale(1.4);
+            margin-bottom: calc(-3 * var(--size-4));
+        }
+
+        &__item {
+            top    : 0;
+            bottom : 0;
+            padding: var(--size-6) var(--size-4);
+        }
+    }
+}
+
+// Галлерея
+.gallery {
+    &__item {
+        height: 300px;
+    }
+
+    &__info {
+        background     : var(--color-gray-40);
+        backdrop-filter: blur(var(--size-2));
+        border-radius  : 0 0 var(--size-7) var(--size-7);
+    }
+
+    @media(max-width: $laptop) {
+        &__item {
+            transition-delay: 0s;
+        }
+    }
+}
+
+// Вопросы
+.questions {
+    background-image:
+        linear-gradient(251.47deg, var(--color-primary-40) 0%, var(--color-none) 62.55%),
+        linear-gradient(251.47deg, var(--color-none) 37.45%, var(--color-second-30) 100%);
+
+    &__item {
+        background: linear-gradient(180deg, var(--color-white-30) 0%, var(--color-white-40) 0.01%, var(--color-white) 100%);
+    }
+
+    &__item:is([data-accordion="active"]) &__arrow {
+        transform: rotate(90deg);
+    }
+}
+
+// СМИ
+.media {
+    background:
+        linear-gradient(70.47deg, var(--color-primary-20) 0%, var(--color-none) 62.55%),
+        linear-gradient(70.47deg, var(--color-none) 37.45%, var(--color-second-20) 100%);
+
+    &__item {
+        min-height: 300px;
+        background: linear-gradient(180deg, var(--color-white-30) 0%, var(--color-white-40) 0.01%, var(--color-white) 100%);
+    }
+
+    @media(max-width: $laptop) {
+        &__item {
+            min-height: 250px;
+        }
+    }
+
+    @media(max-width: $tablet) {
+        &__item {
+            transition-delay: 0s;
+        }
+    }
+}
+
+// Связь
+.connection {
+
+    &::before,
+    &::after {
+        content         : '';
+        position        : absolute;
+        top             : 0;
+        bottom          : 0;
+        width           : 360px;
+        height          : 100%;
+        background-image: linear-gradient(270deg, var(--color-none) 0%, var(--color-primary) 80.03%);
+        z-index         : var(--z-1);
+    }
+
+    &::before {
+        left: 0;
+    }
+
+    &::after {
+        right    : 0;
+        transform: scale(-1, 1);
+    }
+
+    &__bg {
+        transform: scale(1.2);
+    }
+
+    &__content {
+        max-width: 630px;
+    }
+
+    @media(max-width: $laptop) {
+
+        &::before,
+        &::after {
+            width: 150px;
+        }
+    }
+
+    @media(max-width: $mobile) {
+
+        &::before,
+        &::after {
+            width: 30px;
+        }
+
+        &__pic {
+            min-height: 350px;
+        }
+    }
+}
+
+// Подвал
+.footer {
+    @media(max-width: $tablet) {
+        text-align     : center;
+        flex-direction : column;
+        justify-content: center;
+    }
+}
+
+// Заголовок
+.page-head {
+    padding-top: 90px;
+    min-height : 300px;
+
+    &--bg {
+        background-image:
+            linear-gradient(251.47deg, var(--color-primary-50) 0%, var(--color-none) 62.55%),
+            linear-gradient(251.47deg, var(--color-none) 37.45%, var(--color-second-40) 100%);
+    }
+
+    &--white {
+        background-color: var(--color-white);
+    }
+
+    &__block {
+        padding-bottom: 60px;
+        border-color  : #D9D9D9;
+    }
+
+    @media(max-width: $mobile) {
+        & {
+            padding-top: 70px;
+            min-height : 250px;
+        }
+
+        &__block {
+            padding-bottom: 30px;
+        }
+    }
+}
+
+// Пагинация
+.pagination {
+    &__item {
+        min-width: var(--size-10);
+        height   : var(--size-10);
+    }
+
+    @media(max-width: $mobile) {
+        &__item {
+            min-width: var(--size-8);
+            height   : var(--size-8);
+        }
+    }
+}
+
+// Контакты
+.contacts {
+    background: var(--color-gray-30) linear-gradient(180deg, var(--color-white-80) 0%, var(--color-none) 100%);
+
+    &__info {
+        max-width: 500px;
+    }
+
+    &__img {
+        background: linear-gradient(180deg, var(--color-none) 0%, var(--color-black-20) 100%), var(--color-primary);
+        min-width : 48px;
+        height    : 48px;
+    }
+
+    &__feedback {
+        max-width: 460px;
+    }
+
+    @media(max-width: $laptop) {
+        & {
+            flex-direction: column;
+        }
+
+        &__info {
+            max-width: 460px;
+        }
+    }
+}
+
+// Обратная связь
+.feedback {
+    background: linear-gradient(180deg, var(--color-white-30) 0%, var(--color-white-40) 0.01%, var(--color-white) 100%);
+}
+
+// Оборудование
+.equipment {
+    background-image: linear-gradient(251.47deg, var(--color-primary-80) 0%, var(--color-none) 62.55%);
+
+    &__item {
+        background     : var(--color-white-10);
+        backdrop-filter: blur(var(--size-2));
+        border-color   : var(--color-white-20);
+    }
+
+    @media(max-width: $laptop) {
+        &__item {
+            transition-delay: 0s;
+        }
+    }
+}
+
+// Собеседование
+.interview {
+    &__card {
+        background-image: linear-gradient(180deg, var(--color-none) 0%, var(--color-black-20) 100%);
+    }
+
+    &__block {
+        padding       : var(--size-8) 64px;
+        padding-bottom: 0;
+    }
+
+    &__form {
+        max-width: 400px;
+    }
+
+    &__btn {
+        max-width: 210px;
+    }
+
+    &__images {
+        max-width    : 580px;
+        height       : 510px;
+        border-radius: var(--size-7) var(--size-7) 0 0;
+    }
+
+    &__circle {
+        width : 425px;
+        height: 425px;
+        filter: blur(80px);
+        top   : 0;
+        left  : var(--size-10);
+    }
+
+    &__border {
+        border-radius: var(--size-7) var(--size-7) 0 0;
+    }
+
+    &__girl {
+        bottom   : 0;
+        left     : 0;
+        right    : 0;
+        max-width: 550px;
+    }
+
+    @media(max-width: $laptop) {
+        &__block {
+            flex-direction : column;
+            align-items    : flex-start;
+            justify-content: flex-start;
+        }
+
+        &__form,
+        &__images {
+            max-width: 100%;
+        }
+    }
+
+    @media(max-width: $tablet) {
+        &__block {
+            padding       : var(--size-5) var(--size-10);
+            padding-bottom: 0;
+        }
+    }
+
+    @media(max-width: $mobile) {
+        &__card {
+            border-radius: 0;
+            margin       : 0 calc(-1 * var(--size-4));
+        }
+
+        &__block {
+            padding       : var(--size-5) var(--size-4);
+            padding-bottom: 0;
+        }
+
+        &__images {
+            max-width: 400px;
+            height   : 350px;
+            margin   : 0 auto;
+        }
+    }
+}
+
+// Возраст
+.ages {
+    background-color: var(--color-black-70);
+    backdrop-filter : blur(var(--size-2));
+
+    &__info {
+        max-width: 500px;
+    }
+}
+
+.limit {
+    left: 0;
+    right: 0;
+    bottom: 20px;
+
+    @media(max-width: $mobile) {
+        &__block {
+            flex-direction: column;
+            align-items:flex-start;
+        }
+    }
+}

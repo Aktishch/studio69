@@ -1,0 +1,109 @@
+
+    <!-- Связь -->
+
+    <section class="connection container bg-primary relative overflow-hidden pb-0">
+        <div class="bg-block absolute pic width-100 height-100 duration-9 anim anim--decrease -scroll-">
+            <picture>
+                <source srcset="img/pictures/girls.webp" type="image/webp">
+                <img class="connection__bg pic__img" src="img/pictures/girls.png" alt="" loading="lazy">
+            </picture>
+        </div>
+        <div class="bg-block absolute bg-primary fade-60 width-100 height-100"></div>
+        <div class="connection__content relative z-2 width-100 mx-auto duration-5 anim anim--up -scroll-">
+            <div class="connection__pic pic pic--rect-x width-100">
+                <div class="loader">
+                    <span class="loader__circle">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#loader" />
+                        </svg>
+                    </span>
+                </div>
+                <picture>
+                    <source srcset="img/pictures/phone.webp" type="image/webp">
+                    <img class="pic__img" src="img/pictures/phone.png" alt="" loading="lazy">
+                </picture>
+                <div class="flex flex-grow flex-direction-column align-items-center justify-content-center bg-block absolute width-100 height-100">
+                    <span class="text text--center text-16 bold-4 color-white mb-2">Остались вопросы?</span>
+                    <h2 class="text text--center text-32 text-md-28 bold-5 color-white mb-6">Напишите нам!</h2>
+                    <span class="text text--center text-14 bold-5 color-white fade-40 mb-9">Выберите комфортный способ</span>
+                    <a class="messenger-btn messenger-btn--tg btn btn--white btn--default radius-3 width-100 mb-6 px-3 -waved-" href="javascript: ;" target="_blank">
+                        <span class="messenger-btn__img btn btn--white btn--light text-16 radius-max pointer-none mr-3">
+                            <svg class="icon">
+                                <use xlink:href="img/icons.svg#tg" />
+                            </svg>
+                        </span>
+                        <span>Написать в Telegram</span>
+                    </a>
+                    <a class="messenger-btn messenger-btn--wa btn btn--white btn--default radius-3 width-100 px-3 -waved-" href="javascript: ;" target="_blank">
+                        <span class="messenger-btn__img btn btn--white btn--light text-18 radius-2 pointer-none mr-3">
+                            <svg class="icon">
+                                <use xlink:href="img/icons.svg#wa" />
+                            </svg>
+                        </span>
+                        <span>Написать в WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+
+    <footer class="footer container flex align-items-center justify-content-between gap-5 bg-black py-4">
+        <a class="logo btn mr-5 mr-td-0" href="index.html">
+            <picture>
+                <source srcset="img/pictures/logo-light.webp" type="image/webp">
+                <img class="width-100" src="img/pictures/logo-light.png" alt="">
+            </picture>
+        </a>
+        <div class="flex flex-direction-column">
+            <span class="text-16 bold-4 color-white fade-40">По всем вопросам</span>
+            <a class="link text-20 bold-7 color-white width-content" href="mailto: info@studio69.ru">info@studio69.ru</a>
+        </div>
+        <div class="flex flex-direction-column">
+            <span class="text-16 bold-4 color-white fade-40">Наш телефон</span>
+            <a class="link text-20 bold-7 color-white width-content" href="tel: 8 (913) 913-66-11">8 (913) 913-66-11</a>
+        </div>
+        <div class="social flex align-items-center gap-4">
+            <a class="social__btn btn btn--primary btn--fill text-20 radius-max -waved-" href="" target="_blank">
+                <svg class="icon">
+                    <use xlink:href="img/icons.svg#tg" />
+                </svg>
+            </a>
+            <a class="social__btn btn btn--green btn--fill text-26 radius-2 -waved-" href="" target="_blank">
+                <svg class="icon">
+                    <use xlink:href="img/icons.svg#wa" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <section class="limit container fixed z-4 py-0">
+        <div class="limit__block flex align-items-center justify-content-between gap-3 bg-white box-shadow radius-4 fade-0 visibility-hidden ease duration-4 p-5 p-md-3 -limit-">
+            <div class="flex flex-direction-column">
+                <h4 class="text-16 text-md-14 bold-6 mb-2">Вам уже исполнилось 18 лет?</h4>
+                <p class="text-14 text-md-12 bold-4 interval-5">
+                    Содержание сайта предназначено для просмотра исключительно лицам достигшим совершеннолетия <br>
+                    Если вам нет 18 лет, немедленно покиньте сайт!
+                </p>
+            </div>
+            <button class="btn btn--primary btn--default btn--fill px-10 -waved- -limit-btn-">ОК</button>
+        </div>
+    </section>
+
+    <!-- <div class="ages container flex flex-direction-column align-items-center justify-content-center fixed z-9 bg-block fade-0 visibility-hidden pointer-all ease duration-8 -ages-">
+        <div class="ages__info bg-white radius-4 width-100 p-10">
+            <h4 class="text text--center text-22 bold-6 border-bottom mb-3 pb-3">Вам уже исполнилось 18 лет?</h4>
+            <p class="text text--center text-16 bold-4 interval-5 border-bottom mb-3 pb-3">
+                Содержание сайта предназначено для просмотра исключительно лицам достигшим совершеннолетия <br>
+                Если вам нет 18 лет, немедленно покиньте сайт!
+            </p>
+            <div class="flex flex-wrap align-items-center justify-content-center gap-5">
+                <button class="btn btn--second btn--default btn--fill color-black px-10 -waved- -ages-yes-">Да</button>
+                <button class="btn btn--primary btn--default btn--fill px-10 -waved- -ages-not-">Нет</button>
+            </div>
+        </div>
+    </div> -->
+    
+</body>
+</html>

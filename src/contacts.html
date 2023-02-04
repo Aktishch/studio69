@@ -1,0 +1,90 @@
+    <% var data = {
+
+        title: 'Контакты',
+        status: true
+
+    } %>
+
+    <%= _.template(require('./includes/header.html').default)({data}) %>
+
+    <%= _.template(require('./includes/page-head.html').default)({data}) %>
+
+    <!-- Контакты -->
+
+    <main class="contacts container flex align-items-center justify-content-between overflow-hidden">
+        <div class="contacts__info width-100 mb-ld-10">
+            <h2 class="text-28 text-md-24 bold-7 mb-10 mb-md-5 anim anim--up -scroll-">Свяжитесь с нами</h2>
+            <div class="flex flex-direction-column gap-10">
+                <div class="flex align-items-center anim anim--up -scroll-">
+                    <div class="contacts__img flex align-items-center justify-content-center text-24 color-white radius-3 mr-6 mr-md-3">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#geo" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-direction-column">
+                        <span class="text-20 text-md-16 bold-4">Недалеко от центра</span>
+                        <b class="text-20 text-md-16 bold-7">г. Новосибирск, станция Студийная</b>
+                    </div>
+                </div>
+                <div class="flex align-items-center anim anim--up -scroll-">
+                    <div class="contacts__img flex align-items-center justify-content-center text-24 color-white radius-3 mr-6 mr-md-3">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#phone" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-direction-column">
+                        <span class="text-20 text-md-16 bold-4">Звоните</span>
+                        <a class="link text-26 text-md-20 bold-7 width-content" href="tel: +7 (918) 317-99-73">+7 (918) 317-99-73</a>
+                    </div>
+                </div>
+                <div class="flex align-items-center anim anim--up -scroll-">
+                    <div class="contacts__img flex align-items-center justify-content-center text-24 color-white radius-3 mr-6 mr-md-3">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#mail" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-direction-column">
+                        <span class="text-20 text-md-16 bold-4">Пишите</span>
+                        <a class="link text-26 text-md-20 bold-7 width-content" href="mailto: info@studio69.ru">info@studio69.ru</a>
+                    </div>
+                </div>
+                <div class="flex align-items-center anim anim--up -scroll-">
+                    <div class="contacts__img flex align-items-center justify-content-center text-24 color-white radius-3 mr-6 mr-md-3">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#oclock" />
+                        </svg>
+                    </div>
+                    <div class="flex flex-direction-column">
+                        <span class="text-20 text-md-16 bold-4">Часы работы</span>
+                        <b class="text-26 text-md-20 bold-7">08:00-21:00</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contacts__feedback feedback radius-4 box-shadow overflow-hidden width-100 anim anim--left -scroll-">
+            <div class="text text--center text-28 text-md-20 bold-7 bg-white py-5 px-10 px-md-4">Есть вопрос? Задавайте</div>
+            <form class="flex flex-direction-column py-6 px-10 px-md-4 -validate-form-">
+                <label class="flex flex-direction-column mb-4 -validate-label-">
+                    <span class="text-16 bold-6 mb-3">Ваш телефон</span>
+                    <div class="cover">
+                        <input class="input -validate-input- -input-tel-" type="tel" placeholder="+7 (" name="tel">
+                        <span class="error anim anim--fade -validate-error-">Пожалуйста, введите ваш телефон!</span>
+                    </div>
+                </label>
+                <label class="flex flex-direction-column mb-6 -validate-label-">
+                    <span class="text-16 bold-6 mb-3">Ваш вопрос</span>
+                    <div class="cover">
+                        <textarea class="input -validate-input- -input-textarea-" type="text" name="reviews"></textarea>
+                        <span class="error anim anim--fade -validate-error-">Пожалуйста, напишите вопрос!</span>
+                    </div>
+                </label>
+                <button class="btn btn--primary btn--default btn--fill mb-6 -waved-" type="submit">Отправить</button>
+                <div class="link text text--center text-12 bold-4 interval-4 width-content width-md-100 fade-60 mx-auto" data-fancybox-modal data-type="ajax" data-src="dialogs/dialog-politics.html">
+                    Отправляя заявку вы даете согласие на обработку <br class="display-md-none">
+                    ваших персональных данных
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <%= _.template(require('./includes/footer.html').default)() %>

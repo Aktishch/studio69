@@ -1,0 +1,20 @@
+// Сетка
+.grid {
+    display              : grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow       : row dense;
+
+    &--rows {
+        grid-auto-rows: var(--size-10);
+    }
+}
+
+// Колонки
+.col {
+    @include getGridColsOrRows('column');
+}
+
+// Строки
+.row {
+    @include getGridColsOrRows('row');
+}

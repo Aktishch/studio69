@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="autor" content="Александр Актищев aktishch@gmail.com"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data.title %></title>
+</head>
+<body>
+
+    <!-- Шапка документа -->
+
+    <header class="header container flex align-items-center justify-content-between fixed z-5 py-5 py-md-2 linear duration-3 -header-">
+        <a class="logo btn mr-5" href="index.html">
+            <picture>
+                <source srcset="img/pictures/logo.webp" type="image/webp">
+                <img class="width-100" src="img/pictures/logo.png" alt="">
+            </picture>
+        </a>
+        <nav class="nav flex align-items-center justify-content-between display-ld-none gap-3 width-100 display-td-none">
+            <a class="link text-16 bold-5 width-content" href="index.html">Главная</a>
+            <a class="link text-16 bold-5 width-content" href="about-us.html">О нас</a>
+            <a class="link text-16 bold-5 width-content" href="blog.html">Блог</a>
+            <a class="link text-16 bold-5 width-content" href="contacts.html">Контакты</a>
+        </nav>
+        <div class="social flex align-items-center gap-4 display-td-none">
+            <a class="social__btn btn btn--primary btn--fill text-20 radius-max -waved-" href="" target="_blank">
+                <svg class="icon">
+                    <use xlink:href="img/icons.svg#tg" />
+                </svg>
+            </a>
+            <a class="social__btn btn btn--green btn--fill text-26 radius-2 -waved-" href="" target="_blank">
+                <svg class="icon">
+                    <use xlink:href="img/icons.svg#wa" />
+                </svg>
+            </a>
+        </div>
+        <a class="link display-md-none text-20 bold-7 width-content" href="tel: 8 (913) 913-66-11">8 (913) 913-66-11</a>
+        <button class="btn btn--primary btn--default btn--fill display-td-none -waved-" data-fancybox-modal data-type="ajax" data-src="dialogs/dialog-feedback.html">Стать моделью</button>
+        <button class="burger btn btn--primary btn--light text-40 display-none display-ld-flex radius-2 p-1 -burger- -waved-">
+            <svg class="icon">
+                <use xlink:href="img/icons.svg#burger" />
+            </svg>
+        </button>
+    </header>
+
+    <!-- Мобильное меню -->
+
+    <section class="mobile flex flex-direction-column fixed z-5 overflow-auto width-100 ease duration-3" data-mobile data-theme="light">
+        <header class="mobile__head flex align-items-center justify-content-between gap-2 relative bg-black py-3 px-4 ease duration-5 delay-3">
+            <a class="logo btn" href="index.html">
+                <picture>
+                    <source srcset="img/pictures/logo-light.webp" type="image/webp">
+                    <img class="width-100" src="img/pictures/logo-light.png" alt="">
+                </picture>
+            </a>
+            <span class="text-24 color-white cursor -close-">
+                <svg class="icon">
+                    <use xlink:href="img/icons.svg#close" />
+                </svg>
+            </span>
+        </header>
+        <nav class="mobile__nav flex flex-direction-column relative width-content gap-4 p-4 ease duration-9 delay-5">
+            <a class="link text-22 color-white width-content" href="index.html">Главная</a>
+            <a class="link text-22 color-white width-content" href="about-us.html">О нас</a>
+            <a class="link text-22 color-white width-content" href="blog.html">Блог</a>
+            <a class="link text-22 color-white width-content" href="contacts.html">Контакты</a>
+        </nav>
+        <footer class="mobile__footer relative mt-auto p-4 pb-8 ease duration-5 delay-9">
+            <div class="flex flex-direction-column mb-5">
+                <span class="text-16 color-white mb-2">г. Новосибирск, станция Студийная</span>
+                <a class="link text-24 bold-7 color-white width-content mb-5" href="tel: +7 (918) 317-99-73">+7 (918) 317-99-73</a>
+                <a class="link text-20 color-white width-content" href="mailto: info@studio69.ru">info@studio69.ru</a>
+            </div>
+            <div class="flex flex-direction-column">
+                <a class="messenger-btn messenger-btn--tg btn btn--white btn--default radius-3 width-100 mb-6 px-3 -waved-" href="javascript: ;" target="_blank">
+                    <span class="messenger-btn__img btn btn--white btn--light text-16 radius-max pointer-none mr-3">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#tg" />
+                        </svg>
+                    </span>
+                    <span>Написать в Telegram</span>
+                </a>
+                <a class="messenger-btn messenger-btn--wa btn btn--white btn--default radius-3 width-100 px-3 -waved-" href="javascript: ;" target="_blank">
+                    <span class="messenger-btn__img btn btn--white btn--light text-18 radius-2 pointer-none mr-3">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#wa" />
+                        </svg>
+                    </span>
+                    <span>Написать в WhatsApp</span>
+                </a>
+            </div>
+        </footer>
+    </section>

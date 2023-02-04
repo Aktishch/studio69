@@ -1,0 +1,42 @@
+
+    <% var questions = [
+        {
+            title: 'Если не знаю английский язык?'
+        },
+        {
+            title: 'Если у меня нет опыта?'
+        },
+        {
+            title: 'Сколько буду получать?'
+        }
+    ] %>
+    <section class="questions container">
+        <h2 class="title text text--center text-48 text-td-38 text-md-28 bold-8 mb-10 mb-md-6 anim anim--up -scroll-">Частые вопросы</h2>
+        <div class="questions__items flex flex-direction-column gap-4">
+            <% for (var i = 0; i < questions.length; i++) { %>
+                <div class="questions__item relative box-shadow radius-4 border overflow-hidden anim anim--up -scroll-" data-accordion="hidden">
+                    <div class="flex align-items-center justify-content-between gap-1 cursor py-5 px-8 py-md-3 px-md-4 -waved-" data-toggle>
+                        <div class="flex align-items-center">
+                            <img class="icon display-md-none text-26 mr-3" src="img/pictures/questions.svg" alt="">
+                            <h3 class="text-20 text-md-16 bold-8"><%= questions[i].title %></h3>
+                        </div>
+                        <div class="questions__arrow text-14 ease duration-3">
+                            <svg class="icon">
+                                <use xlink:href="img/icons.svg#arrow" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="ease duration-3" data-content>
+                        <div class="border-top pt-6 pt-md-5 pb-10 pb-md-5 px-8 px-md-4">
+                            <p class="text-14 text-md-12 bold-5 interval-4 mb-5 mb-md-3">
+                                С самого первого дня работы с тобой будет работать девочка-оператор-переводчик, которая абсолютно полностью будет вести все разговоры за тебя! Ну а тебе останется только быть красивой на камере.
+                            </p>
+                            <p class="text-14 text-md-12 bold-5 interval-4">
+                                Со временем, когда ты привыкнешь к себе и работе, она тебя научит всему: даст основные фразы для самостоятельной работы, покажет как пользоваться онлайн переводчиком. Но с оператором ты будешь работать до тех пор, пока сама не скажешь нам: «Ребят, я уже всему научилась, мне оператор больше не нужен, хочу сама работать!» Даже без знания английского языка у нас можно зарабатывать много денег
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </section>

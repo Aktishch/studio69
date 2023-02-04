@@ -1,0 +1,45 @@
+// Обнуление
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: {
+        type    : none;
+        position: outside;
+    }
+}
+
+a {
+    color          : var(--color-black);
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    outline: none;
+}
+
+textarea {
+    resize  : none;
+    overflow: auto;
+    height  : 100px !important;
+}
+
+select,
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+    appearance: none;
+}
+
+// Тело документа
+body {
+    font-family     : var(--font-base);
+    color           : var(--color-black);
+    background-color: var(--color-white);
+}

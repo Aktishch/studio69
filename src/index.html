@@ -1,0 +1,430 @@
+    <% var data = {
+
+        title: 'Studio69',
+        status: true
+
+    } %>
+
+    <%= _.template(require('./includes/header.html').default)({data}) %>
+    
+    <!-- Студия -->
+
+    <main class="studio container flex flex-grow flex-direction-column align-items-center justify-content-end relative overflow-hidden">
+        <div class="studio__bg bg-block container absolute width-100 height-100">
+            <div class="studio__block relative flex flex-direction-column flex-grow align-items-center justify-content-center height-100">
+                <picture>
+                    <source srcset="img/pictures/Studio69.webp" type="image/webp">
+                    <img class="width-100 duration-5 anim anim--down -scroll-" src="img/pictures/Studio69.png" alt="">
+                </picture>
+                <picture>
+                    <source srcset="img/pictures/woman.webp" type="image/webp">
+                    <img class="studio__woman absolute width-100 duration-4 delay-4 anim anim--up -scroll-" src="img/pictures/woman.png" alt="">
+                </picture>
+            </div>
+        </div>
+        <div class="studio__content flex flex-direction-column relative width-100 height-100 mt-auto">
+            <div class="studio__work box-shadow radius-7 py-8 px-4 py-td-2 px-td-2 mb-6 mb-md-3 delay-4 anim anim--up -scroll-">
+                <h1 class="studio__title title flex align-items-center justify-content-between text text--center text-32 text-ld-22 text-md-18 bold-8 width-100 mx-auto">
+                    <span>Комфортная работа вебкам</span>
+                    <span class="studio__play flex align-items-center justify-content-center display-td-none color-primary text-14 radius-max box-shadow mx-2">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#play" />
+                        </svg>
+                    </span>
+                    <span>моделью в Новосибирске</span>
+                </h1>
+            </div>
+            <div class="studio__items flex flex-wrap align-items-center justify-content-around gap-5">
+                <div class="studio__item flex flex-direction-column align-items-center justify-content-center delay-5 anim anim--up -scroll-">
+                    <img class="icon text-24 mb-4" src="img/pictures/money.svg" alt="">
+                    <b class="text text--center text-16 bold-7">Доход от 50 000 ₽</b>
+                    <span class="text text--center text-16 text-md-14 bold-4">в первые две недели работы</span>
+                </div>
+                <div class="studio__item flex flex-direction-column align-items-center justify-content-center delay-6 anim anim--up -scroll-">
+                    <img class="icon text-24 mb-4" src="img/pictures/rocket.svg" alt="">
+                    <b class="text text--center text-16 bold-7">Продвижение в ТОП</b>
+                    <span class="text text--center text-16 text-md-14 bold-4">на зарубежных площадках</span>
+                </div>
+                <div class="studio__item flex flex-direction-column align-items-center justify-content-center delay-7 anim anim--up -scroll-">
+                    <img class="icon text-24 mb-4" src="img/pictures/camera.svg" alt="">
+                    <b class="text text--center text-16 bold-7">Новейшее</b>
+                    <span class="text text--center text-16 text-md-14 bold-4">мощное оборудование</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Анкета -->
+
+    <section class="questionnaire container bg-primary py-10" id="questionnaire">
+        <h2 class="text text--center text-32 text-md-28 bold-6 color-white mb-9 mb-md-6 anim anim--up -scroll-">Заполни анкету и начни зарабатывать!</h2>
+        <form class="flex flex-wrap align-items-end justify-content-between gap-4 mb-5 anim anim--right -scroll- -validate-form-">
+            <label class="questionnaire__label questionnaire__label--max flex flex-direction-column -validate-label-">
+                <span class="text-16 bold-6 color-white mb-2">Ваше имя</span>
+                <div class="cover">
+                    <input class="input -validate-input- -input-name-" type="text" placeholder="Напишите сюда..." name="name">
+                    <span class="error anim anim--fade -validate-error-">Пожалуйста, введите ваше имя!</span>
+                </div>
+            </label>
+            <label class="questionnaire__label questionnaire__label--max flex flex-direction-column -validate-label-">
+                <span class="text-16 bold-6 color-white mb-2">Ваш телефон</span>
+                <div class="cover">
+                    <input class="input -validate-input- -input-tel-" type="tel" placeholder="+7 (" name="tel">
+                    <span class="error anim anim--fade -validate-error-">Пожалуйста, введите ваш телефон!</span>
+                </div>
+            </label>
+            <label class="questionnaire__label questionnaire__label--min flex flex-direction-column -validate-label-">
+                <span class="text-16 bold-6 color-white mb-2">Возраст</span>
+                <div class="cover">
+                    <input class="input -validate-input- -input-number-" type="text" placeholder="Цифра..." maxlength="2" name="number">
+                    <span class="error anim anim--fade -validate-error-">Ваш возраст!</span>
+                </div>
+            </label>
+            <div class="flex flex-direction-column">
+                <span class="text-16 bold-6 color-white mb-2">Ваше фото</span>
+                <div class="cover -download-">
+                    <input class="display-none -download-file-" type="file" id="file">
+                    <label class="btn btn--white btn--default btn--light -waved-" for="file">
+                        <span class="text-24 mr-3">
+                            <svg class="icon">
+                                <use xlink:href="img/icons.svg#image" />
+                            </svg>
+                        </span>
+                        <span class="bold-4 -download-text-">Загрузить</span>
+                    </label>
+                </div>
+            </div>
+            <button class="questionnaire__btn btn btn--second btn--default btn--fill bold-7 width-md-auto -waved-" type="submit">Отправить</button>
+        </form>
+        <div class="link text text--center text-14 bold-4 width-content width-md-100 color-white fade-60 mx-auto" data-fancybox-modal data-type="ajax" data-src="dialogs/dialog-politics.html">Нажимая на кнопку, ты даешь согласие на обработку персональных данных</div>
+    </section>
+
+    <!-- Преимущества -->
+    <% var advantages = [
+        {
+            delay: '',
+            img: '1',
+            title: 'Комфортные условия в студии',
+            text: 'Лучшие дизайнерские номера. Главное преимущество <br class="display-ld-none"> студии в том, что, работая в ней, мы создаём идеальные <br class="display-ld-none"> условия для вашего съёмочного процесса'
+        },
+        {
+            delay: 'delay-2',
+            img: '2',
+            title: 'Свободный график',
+            text: 'С 08:00 до 13:00; с 13:00 до 18:00; с 18:00 до 23:00; с 23:00 <br class="display-ld-none"> до 8:00. Совмещай работу с учебой, личной жизнью <br class="display-ld-none"> или иным местом работы.'
+        },
+        {
+            delay: '',
+            img: '3',
+            title: 'Обучение и продвижение',
+            text: 'Мы знаем как выводить в ТОП. Ты получаешь всестороннее <br class="display-ld-none"> развитие. Индивидуально работаем над твоим образом <br class="display-ld-none"> и стилем. Помогаем на каждом этапе работы! '
+        },
+        {
+            delay: 'delay-2',
+            img: '4',
+            title: 'Легкий старт для новичков',
+            text: 'Выплаты каждый день, пониженная комиссия. Первые две <br class="display-ld-none"> недели работы ты будешь получать зарплату каждый день! <br class="display-ld-none"> В дальнейшем мы делаем выплаты 2 раза в месяц.'
+        },
+        {
+            delay: '',
+            img: '5',
+            title: 'Индивидуальный подход',
+            text: 'Наши модели получают от 2 000 долларов в месяц. <br class="display-ld-none"> Достигается благодаря индивидуальному подходу <br class="display-ld-none">к каждой модели. Получай до 80%.'
+        },
+        {
+            delay: 'delay-2',
+            img: '6',
+            title: 'Иностранные площадки',
+            text: 'Ориентируемся на платежеспособную западную аудиторию. <br class="display-ld-none"> Мощные компьютеры позволяющие работать на большом <br class="display-ld-none"> количестве сайтов одновременно.'
+        }
+    ] %>
+    <section class="advantages container">
+        <h2 class="title text text--center text-48 text-td-38 text-md-28 bold-8 mb-10 mb-md-6 anim anim--up -scroll-">Преимущества работы</h2>
+        <div class="advantages__items grid gap-8 gap-md-4">
+            <% for (var i = 0; i < advantages.length; i++) { %>
+                <div class="advantages__item col-6 col-td-12 radius-7 box-shadow overflow-hidden <%= advantages[i].delay %> anim anim--up -scroll-">
+                    <div class="flex align-items-center bg-white py-4 px-10 px-md-3">
+                        <img class="advantages__img icon mr-3" src="img/pictures/advantages-<%= advantages[i].img %>.svg" alt="">
+                        <b class="text-20 text-md-16 bold-7"><%= advantages[i].title %></b>
+                    </div>
+                    <p class="text-16 text-md-14 interval-4 fade-70 pt-5 pt-md-4 pb-9 pb-md-4 px-10 px-md-3">
+                        <%= advantages[i].text %>
+                    </p>
+                </div>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Рассчет -->
+    <% var calculation = [
+        {
+            img: 'iphone',
+            title: 'Iphone 14 Pro',
+            subtitle: 'за 1 месяц работы'
+        },
+        {
+            img: 'relaxation',
+            title: 'отдых на мальдивах',
+            subtitle: 'за 3 месяца работы'
+        },
+        {
+            img: 'car',
+            title: 'mercedes',
+            subtitle: 'за полгода работы'
+        }
+    ] %>
+    <section class="calculation container relative overflow-hidden">
+        <div class="bg-block absolute width-100 height-100 pb-0">
+            <div class="calculation-slider height-100">
+                <div class="swiper height-100">
+                    <div class="swiper-wrapper">
+                        <% for (var i = 0; i < calculation.length; i++) { %>
+                            <div class="swiper-slide relative width-100 height-100">
+                                <div class="pic pic--rect-x absolute width-100 height-100">
+                                    <picture>
+                                        <source srcset="img/pictures/<%= calculation[i].img %>.webp" type="image/webp">
+                                        <img class="pic__img" src="img/pictures/<%= calculation[i].img %>.jpg" alt="">
+                                    </picture>
+                                </div>
+                                <div class="calculation__info flex flex-direction-column absolute border radius-7 width-100 py-5 px-4 py-md-3 px-md-2">
+                                    <b class="text text--center text--uppercase text-24 text-md-18 bold-7 color-primary"><%= calculation[i].title %></b>
+                                    <span class="text text--center text-24 text-md-16 bold-5"><%= calculation[i].subtitle %></span>
+                                </div>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="calculation__content relative z-3">
+            <h2 class="calculation__title text text--center text-48 text-td-38 text-md-28 bold-8 color-white mb-10 anim anim--up -scroll-">
+                Рассчитайте свой <span class="color-primary">заработок</span>
+            </h2>
+            <div class="calculation__block radius-7 box-shadow overflow-hidden width-100 anim anim--right -scroll-">
+                <div class="text text--center text-28 text-md-20 bold-7 bg-white py-5 px-10 px-md-4">Калькулятор дохода</div>
+                <div class="flex flex-direction-column pt-6 pb-10 pb-md-6 px-10 px-md-4 -calc-">
+                    <label class="flex flex-direction-column mb-6 mb-md-5">
+                        <span class="calculation__text text-16 text-md-14 bold-6 mb-3">Уровень английского</span>
+                        <div class="cover">
+                            <select class="input -validate-input- -calc-select-">
+                                <option value="1" selected="selected">Начальный</option>
+                                <option value="2">Базовый</option>
+                                <option value="3">Ниже среднего</option>
+                                <option value="4">Средний</option>
+                                <option value="5">Выше среднего</option>
+                                <option value="6">Продвинутый</option>
+                                <option value="7">Профессиональный </option>
+                            </select>
+                            <span class="cover__img cover__img--arrow text-12 color-black">
+                                <svg class="icon">
+                                    <use xlink:href="img/icons.svg#arrow" />
+                                </svg>
+                            </span>
+                        </div>
+                    </label>
+                    <div class="range width-100 mb-10 mb-md-5 -range-">
+                        <div class="flex align-items-center justify-content-between mb-6">
+                            <span class="calculation__text text-16 text-md-14 bold-6 mb-3">Количество смен в неделю</span>
+                            <output class="calculation__text text-16 bold-4 fade-40 -range-input-"></output>
+                        </div>
+                        <div class="range__wrapper relative">
+                            <input class="range__circle display-block bg-grey radius-1 width-100 height-100 -range-circle- -calc-days-" type="range" step="1" max="7" min="1" value="4">
+                            <span class="range__line display-block bg-primary bg-block absolute radius-1 height-100 pointer-none -range-line-"></span>
+                            <output class="range__bubble absolute z-2 color-white text-16 bold-6 pointer-none -range-bubble-"></output>
+                        </div>
+                    </div>
+                    <div class="range width-100 mb-10 mb-md-5 -range-">
+                        <div class="flex align-items-center justify-content-between mb-6">
+                            <span class="calculation__text text-16 text-md-14 bold-6 mb-3">Опыт работы в месяцах</span>
+                            <output class="calculation__text text-16 bold-4 fade-40 -range-input-"></output>
+                        </div>
+                        <div class="range__wrapper relative">
+                            <input class="range__circle display-block bg-grey radius-1 width-100 height-100 -range-circle- -calc-months-" type="range" step="1" max="12" value="6">
+                            <span class="range__line display-block bg-primary bg-block absolute radius-1 height-100 pointer-none -range-line-"></span>
+                            <output class="range__bubble absolute z-2 color-white text-16 bold-6 pointer-none -range-bubble-"></output>
+                        </div>
+                    </div>
+                    <div class="flex align-items-center justify-content-between gap-1 bg-white radius-4 py-4 px-6 px-md-4 mb-8 mb-md-5">
+                        <div class="text-16 text-md-14 bold-7">Доход за неделю</div>
+                        <div class="title text-24 text-md-18 bold-8">
+                            <span class="-calc-price-">56 000</span> ₽
+                        </div>
+                    </div>
+                    <a class="btn btn--primary btn--default btn--fill -waved-" href="#questionnaire" data-href>Заполнить анкету</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Работа -->
+    <% var working = [
+        {
+            delay: '',
+            number: '1',
+            title: 'Отправить анкету',
+            subtitle: 'и дождаться ответа'
+        },
+        {
+            delay: 'delay-2',
+            number: '2',
+            title: 'Записаться',
+            subtitle: 'на собеседование'
+        },
+        {
+            delay: 'delay-4',
+            number: '3',
+            title: 'Прослушать',
+            subtitle: 'инструкции по работе'
+        },
+        {
+            delay: 'delay-6',
+            number: '4',
+            title: 'Выбрать удобный график',
+            subtitle: 'и начать зарабатывать'
+        }
+    ] %>
+    <section class="working container">
+        <h2 class="title text text--center text-48 text-td-38 text-md-28 bold-8 mb-10 mb-md-6 anim anim--up -scroll-">Как начать работать у нас</h2>
+        <div class="working__items grid gap-8 gap-md-4">
+            <% for (var i = 0; i < working.length; i++) { %>
+                <div class="working__item card col-3 col-ld-6 p-4 p-md-2 <%= working[i].delay %> anim anim--up -scroll-">
+                    <div class="working__pic pic pic--square radius-7 box-shadow width-100 mb-6 mb-md-3">
+                        <img class="pic__img pic__img--sd" src="img/pictures/working-<%= working[i].number %>.svg" alt="" loading="lazy">
+                    </div>
+                    <div class="card-content align-items-center justify-content-center pb-4 pb-md-2">
+                        <span class="text text--center text-14 bold-5 color-primary mb-2">Этап <%= working[i].number %></span>
+                        <b class="text text--center text-14 bold-7 mb-1"><%= working[i].title %></b>
+                        <p class="text text--center text-14 bold-4"><%= working[i].subtitle %></p>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Условия -->
+
+    <section class="terms bg-primary container relative overflow-hidden">
+        <div class="bg-block absolute pic pic--rect-x width-100 height-100">
+            <picture>
+                <source srcset="img/pictures/terms-bg.webp" type="image/webp">
+                <img class="terms__pic pic__img" src="img/pictures/terms-bg.png" alt="">
+            </picture>
+        </div>
+        <div class="terms__items flex align-items-center justify-content-between gap-td-3 relative box-shadow radius-7 px-6 px-td-3 py-td-3">
+            <div class="terms__image display-none display-td-block relative">
+                <picture>
+                    <source srcset="img/pictures/terms-person.webp" type="image/webp">
+                    <img class="width-100" src="img/pictures/terms-person.png" alt="" loading="lazy">
+                </picture>
+            </div>
+            <div class="terms__item terms__item--1 relative bg-white box-shadow radius-7 width-100 anim anim--down -scroll-">
+                <h2 class="text-42 text-td-28 bold-8 mb-8 mb-td-5">Мы ищем</h2>
+                <ul class="listing flex flex-direction-column gap-7 gap-td-5">
+                    <li class="listing__item listing__item--primary text-16 text-md-14 bold-7">От 18 до 35 лет</li>
+                    <li class="listing__item listing__item--primary text-16 text-md-14 bold-7">Комуникабельность</li>
+                    <li class="listing__item listing__item--primary text-16 text-md-14 bold-7">Пунктуальность</li>
+                    <li class="listing__item listing__item--primary text-16 text-md-14 bold-7">Целеустремленность</li>
+                    <li class="listing__item listing__item--primary text-16 text-md-14 bold-7">Опрятный внешний вид</li>
+                    <li class="listing__item listing__item--primary text-16 text-md-14 bold-7">Отсутвие вредных привычек</li>
+                    <li class="listing__item listing__item--primary text-16 text-md-14 bold-7">Отсутвие проблем с законом</li>
+                </ul>
+            </div>
+            <div class="terms__person display-td-none pic pic--rect-x absolute width-100">
+                <picture>
+                    <source srcset="img/pictures/terms-person.webp" type="image/webp">
+                    <img class="pic__img pic__img--sd" src="img/pictures/terms-person.png" alt="" loading="lazy">
+                </picture>
+                <div class="terms__play flex align-items-center justify-content-center bg-block absolute text-30 color-red radius-7 box-shadow m-auto">
+                    <svg class="icon">
+                        <use xlink:href="img/icons.svg#play" />
+                    </svg>
+                </div>
+            </div>
+            <div class="terms__item terms__item--2 relative bg-primary color-white box-shadow radius-7 width-100 delay-3 anim anim--up -scroll-">
+                <h2 class="text-42 text-td-28 bold-8 mb-8 mb-td-5">Вы получите</h2>
+                <ul class="listing flex flex-direction-column gap-7 gap-td-5">
+                    <li class="listing__item listing__item--white text-16 text-md-14 bold-7">Высокий заработок</li>
+                    <li class="listing__item listing__item--white text-16 text-md-14 bold-7">Выплаты без задержек</li>
+                    <li class="listing__item listing__item--white text-16 text-md-14 bold-7">Студия 300кв/м. в центре города</li>
+                    <li class="listing__item listing__item--white text-16 text-md-14 bold-7">Красивый интерьер</li>
+                    <li class="listing__item listing__item--white text-16 text-md-14 bold-7">Подарки, бонусы, корпоративы</li>
+                    <li class="listing__item listing__item--white text-16 text-md-14 bold-7">Обучение для новых моделей</li>
+                    <li class="listing__item listing__item--white text-16 text-md-14 bold-7">Дружный коллектив</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+
+    <section class="about-us container bg-white">
+        <h2 class="title text text--center text-48 text-td-38 text-md-28 bold-8 mb-10 mb-md-6 anim anim--up -scroll-">Немного о Studio69</h2>
+        <p class="text-16 text-md-14 bold-4 interval-4 fade-70 mb-5 anim anim--fade -scroll-">
+            Твоя работа будет заключаться в общении с пользователями видеочата через Интернет. Общаться надо таким образом, чтобы им было интересно поддерживать общение с тобой как можно дольше – ведь пользователи платят за каждую минуту, проведенную с тобой в чате. В общении с пользователями ты ограничена исключительно своей фантазией, творческим подходом и рамками закона.
+        </p>
+        <p class="text-20 text-md-18 bold-6 interval-4 mb-10 mb-td-5 anim anim--fade -scroll-">
+            Будь собой в самых ярких проявлениях. Позволь себе окунуться в мир неограниченной фантазии и денег
+        </p>
+
+        <%= _.template(require('./includes/gallery.html').default)({data}) %>
+
+        <p class="text-16 text-md-14 bold-4 interval-4 fade-70 mt-10 mt-td-5 anim anim--fade -scroll-">
+            Деталями, которые необходимы для более успешной работы, мы поделимся при инструктаже. Все сайты, с которыми мы работаем, заблокированы от российских пользователей, так что за конфиденциальность работы можно не переживать. Предлагаем комфортные условия и высокий заработок. Деталями, которые необходимы для более успешной работы, мы поделимся при инструктаже. Все сайты, с которыми мы работаем, заблокированы от российских пользователей, так что за конфиденциальность работы можно не переживать. Предлагаем комфортные условия и высокий заработок.Твоя работа будет заключаться в общении с пользователями видеочата через Интернет. 
+        </p>
+    </section>
+
+    <!-- Вопросы -->
+
+    <%= _.template(require('./includes/questions.html').default)() %>
+
+    <!-- Блог -->
+
+    <section class="blog container bg-white">
+        <h2 class="title text text--center text-48 text-td-38 text-md-28 bold-8 mb-10 mb-md-6">Наш блог</h2>
+        
+        <% var quantity = {number: '1'} %>
+        <%= _.template(require('./includes/blog.html').default)({quantity}) %>
+
+        <a class="btn btn--grey btn--default btn--fill width-content bold-7 mx-auto mt-10 anim anim--up -scroll- -waved-" href="blog.html">Посмотреть больше</a>
+    </section>
+
+    <!-- СМИ -->
+    <% var media = [
+        {
+            delay: '',
+            number: '1',
+            text: 'webcam-studio.ru'
+        },
+        {
+            delay: 'delay-2',
+            number: '2',
+            text: 'webcam-studios.ru'
+        },
+        {
+            delay: 'delay-4',
+            number: '3',
+            text: 'webcam-best.com'
+        }
+    ] %>
+    <section class="media container">
+        <h2 class="title text text--center text-48 text-td-38 text-md-28 bold-8 mb-10 mb-md-6 anim anim--up -scroll-">Что о нас говорят</h2>
+        <div class="media__items grid gap-6 gap-md-4">
+            <% for (var i = 0; i < media.length; i++) { %>
+                <a class="media__item col-4 col-td-12 card align-items-center justify-content-center border py-8 px-10 px-md-5 <%= media[i].delay %> anim anim--up -scroll- -waved-" href="javascript: ;">
+                    <div class="pic pic--segment width-100 max-width-100 mb-5">
+                        <img class="pic__img pic__img--sd" src="img/pictures/media-<%= media[i].number %>.svg" alt="" loading="lazy">
+                    </div>
+                    <b class="text text--center text-20 bold-8 mb-5"><%= media[i].text %></b>
+                    <div class="flex align-items-center gap-1">
+                        <img class="icon text-28 text-ld-24" src="img/pictures/star.svg" alt="" loading="lazy">
+                        <img class="icon text-28 text-ld-24" src="img/pictures/star.svg" alt="" loading="lazy">
+                        <img class="icon text-28 text-ld-24" src="img/pictures/star.svg" alt="" loading="lazy">
+                        <img class="icon text-28 text-ld-24" src="img/pictures/star.svg" alt="" loading="lazy">
+                        <img class="icon text-28 text-ld-24" src="img/pictures/star.svg" alt="" loading="lazy">
+                    </div>
+                </a>
+            <% } %>
+        </div>
+    </section>
+    
+    <%= _.template(require('./includes/footer.html').default)() %>

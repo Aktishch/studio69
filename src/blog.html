@@ -1,0 +1,49 @@
+    <% var data = {
+
+        title: 'Наш блог',
+        status: true
+
+    } %>
+
+    <%= _.template(require('./includes/header.html').default)({data}) %>
+
+    <%= _.template(require('./includes/page-head.html').default)({data}) %>
+
+    <!-- Блог -->
+
+    <main class="blog container bg-white">
+
+        <% var quantity = {number: '3'} %>
+        <%= _.template(require('./includes/blog.html').default)({quantity}) %>
+
+        <div class="pagination flex align-items-center gap-4 gap-md-1 width-md-content mx-auto mt-10">
+            <a class="pagination__item btn btn--second btn--fill text-md-14 radius-3" href="">1</a>
+            <a class="pagination__item btn btn--grey btn--border radius-3" href="">
+                <span class="color-black fade-60">2</span>
+            </a>
+            <a class="pagination__item btn btn--grey btn--border text-md-14 radius-3" href="">
+                <span class="color-black fade-60">3</span>
+            </a>
+            <a class="pagination__item btn btn--grey btn--border text-md-14 radius-3" href="">
+                <span class="color-black fade-60">4</span>
+            </a>
+            <a class="pagination__item btn btn--grey btn--border text-md-14 radius-3" href="">
+                <span class="color-black fade-60">5</span>
+            </a>
+            <a class="pagination__item btn btn--grey text-md-14 radius-3" href="">
+                <span class="color-black fade-60">...</span>
+            </a>
+            <a class="pagination__item btn btn--grey btn--border text-md-14 radius-3" href="">
+                <span class="color-black fade-60">26</span>
+            </a>
+            <a class="pagination__item btn btn--grey text-md-14 radius-3" href="">
+                <span class="color-black fade-60">
+                    <svg class="icon">
+                        <use xlink:href="img/icons.svg#arrow" />
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </main>
+    
+    <%= _.template(require('./includes/footer.html').default)() %>

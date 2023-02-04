@@ -1,0 +1,52 @@
+
+    <% var gallery = [
+        {
+            delay: '',
+            number: '1',
+            text: 'Для элегантных <br> и утонченных',
+            icon: 'Sparkling heart'
+        },
+        {
+            delay: 'delay-2',
+            number: '2',
+            text: 'Для веселых <br> и заводных',
+            icon: 'Green heart'
+        },
+        {
+            delay: 'delay-4',
+            number: '3',
+            text: 'Для женственных <br> и интересных',
+            icon: 'Purple heart'
+        },
+        {
+            delay: 'delay-6',
+            number: '4',
+            text: 'Для скромных <br> и милых',
+            icon: 'Yellow heart'
+        }
+    ] %>
+    <div class="gallery grid gap-8 gap-td-5">
+        <% for (var i = 0; i < gallery.length; i++) { %>
+            <div class="gallery__item col-3 col-ld-6 col-md-12 pic pic--square bg-grey box-shadow radius-7 height-md-auto <%= gallery[i].delay %> anim anim--up -scroll-">
+                <div class="loader">
+                    <span class="loader__circle">
+                        <svg class="icon">
+                            <use xlink:href="img/icons.svg#loader" />
+                        </svg>
+                    </span>
+                </div>
+                <picture>
+                    <source srcset="img/pictures/<%= data.status ? 'girl' : 'article-girl' %>-<%= gallery[i].number %>.webp" type="image/webp">
+                    <img class="pic__img pic__img--rise" src="img/pictures/<%= data.status ? 'girl' : 'article-girl' %>-<%= gallery[i].number %>.jpg" alt="" loading="lazy">
+                </picture>
+                <div class="<%= data.status ? '' : 'display-none' %> absolute bg-block flex flex-direction-columnflex-grow p-2">
+                    <div class="gallery__info flex align-items-center justify-content-between box-shadow interval-2 width-100 mt-auto py-4 px-6">
+                        <p class="text-16 bold-6 color-white mr-3">
+                            <%= gallery[i].text %>
+                        </p>
+                        <img class="icon text-32" src="img/pictures/<%= gallery[i].icon %>.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>

@@ -1,0 +1,37 @@
+// Рамка
+.border {
+    @include getBorder('border');
+
+    &-top {
+        @include getBorder('border-top');
+    }
+
+    &-left {
+        @include getBorder('border-left');
+    }
+
+    &-right {
+        @include getBorder('border-right');
+    }
+
+    &-bottom {
+        @include getBorder('border-bottom');
+    }
+
+    &-none {
+        border: none;
+    }
+}
+
+// Радиус
+.radius {
+    @for $i from 1 through 10 {
+        &-#{$i} {
+            border-radius: var(--size-#{$i});
+        }
+    }
+
+    &-max {
+        border-radius: 50%;
+    }
+}

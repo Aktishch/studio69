@@ -1,0 +1,71 @@
+// Загрузчик
+.loader {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    font-size      : var(--font-42);
+    color          : var(--color-primary);
+    position       : absolute;
+    top            : 0;
+    left           : 0;
+    right          : 0;
+    bottom         : 0;
+    width          : 100%;
+    height         : 100%;
+    pointer-events : none;
+
+    &__circle {
+        animation: {
+            name           : loaderCircle;
+            duration       : 1.7s;
+            timing-function: linear;
+            iteration-count: infinite;
+        }
+
+        & :is(svg) {
+            animation: {
+                name           : loader;
+                duration       : 1.5s;
+                timing-function: ease-in-out;
+                iteration-count: infinite;
+            }
+        }
+    }
+}
+
+@keyframes loaderCircle {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes loader {
+
+    0% {
+        stroke: {
+            dasharray : 1px, 200px;
+            dashoffset: 0px;
+        }
+    }
+
+    50% {
+        stroke: {
+            dasharray : 100px, 200px;
+            dashoffset: -15px;
+        }
+    }
+
+    100% {
+        stroke: {
+            dasharray : 100px, 200px;
+            dashoffset: -125px;
+        }
+    }
+
+}

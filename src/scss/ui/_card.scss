@@ -1,0 +1,30 @@
+// Карточка
+.card {
+    display       : flex;
+    flex-direction: column;
+    position      : relative;
+    box-shadow    : 0 var(--size-5) var(--size-5) var(--color-black-10);
+    background    : linear-gradient(180deg, var(--color-white) 0%, var(--color-none) 100%);
+    border-radius : var(--size-7);
+    overflow      : hidden;
+
+    transition: {
+        duration       : 0.2s;
+        timing-function: ease;
+    }
+
+    &-content {
+        display: flex;
+
+        flex: {
+            direction: column;
+            grow     : 1;
+        }
+    }
+
+    @media(hover) {
+        &:hover {
+            box-shadow: 0 var(--size-5) var(--size-5) var(--color-black-30);
+        }
+    }
+}

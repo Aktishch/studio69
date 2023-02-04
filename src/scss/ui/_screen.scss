@@ -1,0 +1,31 @@
+// Поведение элемента в потоке
+.display {
+    @include getDisplay;
+}
+
+// Отображение элемента
+.visibility {
+    @each $value in $visibility {
+        &-#{$value} {
+            visibility: #{$value};
+        }
+    }
+}
+
+// Отображение содержимого
+.overflow {
+    @each $value in $overflow {
+        &-#{$value} {
+            overflow: #{$value};
+        }
+    }
+}
+
+// Реакция элемента на события указателя
+.pointer {
+    @each $value in $pointer-events {
+        &-#{$value} {
+            pointer-events: #{$value};
+        }
+    }
+}

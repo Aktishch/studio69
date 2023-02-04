@@ -1,0 +1,57 @@
+
+    <% var blog = [
+        {
+            delay: '',
+            number: '1',
+            title: 'Вебкам без лица: что это за работа и прибыльна ли она?',
+            text: 'Что нужно знать о работе вебкам-моделью без лица? Советы веб-моделей для новичков.'
+        },
+        {
+            delay: 'delay-1',
+            number: '2',
+            title: 'Работа моделью: прибыльная профессия',
+            text: 'Как устроиться на работу моделью/вебкам-моделью? В чем заключается работа фотомоделью?'
+        },
+        {
+            delay: 'delay-2',
+            number: '3',
+            title: 'Работа в видеочате: особенности, преимущества',
+            text: 'Особенности и преимущества работы в видеочате. Что нужно знать о работе в видеочате? Советы для новичков'
+        },
+        {
+            delay: 'delay-3',
+            number: '4',
+            title: 'Работа вебкам с телефона: особенности',
+            text: 'Работа вебкам-моделью с телефона: сложно ли запускать трансляции и что еще нужно, чтобы общаться с клиентами...'
+        }
+    ] %>
+    <div class="grid gap-6 gap-md-4">
+        <% for (var i = 0; i < quantity.number; i++) { %>
+            <% for (var j = 0; j < blog.length; j++) { %>
+                <a class="col-3 col-ld-6 col-md-12 card radius-4 <%= blog[j].delay %> anim anim--up -scroll- -waved-" href="blog-detail.html">
+                    <div class="pic pic--rect-x">
+                        <div class="loader">
+                            <span class="loader__circle">
+                                <svg class="icon">
+                                    <use xlink:href="img/icons.svg#loader" />
+                                </svg>
+                            </span>
+                        </div>
+                        <picture>
+                            <source srcset="img/pictures/blog-<%= blog[j].number %>.webp" type="image/webp">
+                            <img class="pic__img pic__img--rise" src="img/pictures/blog-<%= blog[j].number %>.jpg" alt="" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="card-content py-5 px-4">
+                        <b class="text-16 bold-7 interval-3 mb-3">
+                            <%= blog[j].title %>
+                        </b>
+                        <p class="text-14 bold-4 interval-4 fade-60 mb-5">
+                            <%= blog[j].text %>
+                        </p>
+                        <button class="btn btn--primary btn--default btn--fill width-content px-6 mt-auto -waved-">Читать</button>
+                    </div>
+                </a>
+            <% } %>
+        <% } %>
+    </div>
