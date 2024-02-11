@@ -3,6 +3,7 @@ declare global {
     interface Window {
 
         Fancybox: any
+        ym: any
 
     }
 
@@ -157,6 +158,8 @@ const formSubmit = (event: Event): void => {
             result.text()
 
         }).then((): void => {
+
+            window.ym(66526738, 'reachGoal', 'zayavka')
 
             window.Fancybox.close()
 

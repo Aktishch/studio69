@@ -11,6 +11,8 @@ const init = (): void => {
 
 	}
 
+	scrollHeader()
+
 	document.addEventListener('scroll', scrollHeader as EventListener)
 
 }
